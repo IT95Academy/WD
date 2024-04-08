@@ -337,9 +337,11 @@ main {
   .form {
     background-color: #eeeff1;
     padding: 100px 0;
+    width: 100%;
 
     .block {
-      width: 540px;
+      max-width: 540px;
+      width: 100%;
       text-align: center;
       margin: 0 auto;
       margin-bottom: 65px;
@@ -359,7 +361,8 @@ main {
     }
 
     form {
-      width: 540px;
+      max-width: 540px;
+      width: 100%;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -368,16 +371,22 @@ main {
       .box {
         display: flex;
         flex-wrap: wrap;
+        width: 100%;
         gap: 30px;
         margin-bottom: 20px;
 
         input {
-          width: 255px;
+          max-width: 255px;
+          width: 100%;
           height: 50px;
           font-size: 14px;
           color: #5f5d5d;
           border: none;
           padding-left: 20px;
+
+          @media (max-width: 540px) {
+            max-width: none;
+          }
 
           &::placeholder {
             color: #5f5d5d;
@@ -387,7 +396,8 @@ main {
 
       textarea {
         resize: none;
-        width: 540px;
+        max-width: 540px;
+        width: 100%;
         height: 175px;
         font-size: 14px;
         line-height: 164%;
@@ -398,7 +408,8 @@ main {
       }
 
       button {
-        width: 190px;
+        max-width: 190px;
+        width: 100%;
         height: 55px;
         background-color: #34547a;
         font-size: 14px;
@@ -412,6 +423,46 @@ main {
           background-color: #727272;
         }
       }
+    }
+  }
+}
+
+footer {
+  background-color: #34547a;
+  padding: 50px 0;
+
+  .container {
+    max-width: 1125px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @media (max-width: 393px) {
+      justify-content: center;
+      text-align: center;
+    }
+
+    .block_1 {
+      h2 {
+        margin-bottom: 20px;
+        font-weight: 500;
+        font-size: 21px;
+        color: #fff;
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 164%;
+        color: #fff;
+      }
+    }
+
+    .block_2 {
+      display: flex;
+      gap: 20px;
     }
   }
 }
